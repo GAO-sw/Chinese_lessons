@@ -1,0 +1,88 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f0f8ff; /* 淡蓝色背景 */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #0056b3; /* 深蓝色标题 */
+}
+
+h2 {
+    color: #d9534f; /* 红色副标题 */
+    border-bottom: 2px solid #f0ad4e; /* 橙色下划线 */
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* 允许卡片换行 */
+    justify-content: center; /* 卡片居中显示 */
+    gap: 20px; /* 卡片之间的间隙 */
+}
+
+.card {
+    background-color: #ffffff; /* 白色卡片背景 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    padding: 15px;
+    width: 180px; /* 固定卡片宽度 */
+    text-align: center;
+    cursor: pointer; /* 鼠标变成手形 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 平滑过渡效果 */
+    display: flex;
+    flex-direction: column; /* 图片和文字垂直排列 */
+    align-items: center; /* 水平居中 */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时轻微上移 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
+}
+
+.item-image {
+    max-width: 100px; /* 限制图片最大宽度 */
+    height: 80px; /* 固定图片高度 */
+    object-fit: contain; /* 保持图片比例，完整显示 */
+    margin-bottom: 10px;
+}
+
+.text-content {
+    margin-top: 10px;
+}
+
+.chinese-word {
+    display: block; /* 独占一行 */
+    font-size: 24px; /* 汉字大一点 */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.pinyin {
+    display: block;
+    font-size: 16px;
+    color: #555; /* 拼音颜色稍浅 */
+    margin-bottom: 5px;
+}
+
+.russian-translation {
+    display: block;
+    font-size: 14px;
+    color: #777; /* 俄语翻译颜色更浅 */
+}
