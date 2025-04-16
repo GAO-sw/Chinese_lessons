@@ -1,7 +1,7 @@
 /* style.css */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f0f8ff; /* 淡蓝色背景 */
+    background-color: #f0f8ff;
     margin: 0;
     padding: 20px;
     display: flex;
@@ -19,122 +19,118 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: #0056b3; /* 深蓝色标题 */
-}
-
-h2 {
-    color: #d9534f; /* 红色副标题 */
-    border-bottom: 2px solid #f0ad4e; /* 橙色下划线 */
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
+h1 { color: #0056b3; }
+h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; margin-top: 30px; }
 
 .card-container {
     display: flex;
-    flex-wrap: wrap; /* 允许卡片换行 */
-    justify-content: center; /* 卡片居中显示 */
-    gap: 20px; /* 卡片之间的间隙 */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .card {
-    background-color: #ffffff; /* 白色卡片背景 */
-    border-radius: 10px; /* 圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-    padding: 15px;
-    width: 180px; /* 固定卡片宽度 */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Remove fixed padding here, adjust min-height if needed */
+    width: 180px;
+    min-height: 150px; /* Give card a minimum height */
     text-align: center;
-    /* cursor: pointer; 保留或移除，看你希望哪里触发 */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* 平滑过渡效果 */
-    display: flex;
-    flex-direction: column; /* 内部元素垂直排列 */
-    align-items: center; /* 水平居中 */
+    cursor: pointer; /* Whole card is clickable */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; /* Use flex to manage children visibility/layout */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically initially */
+    align-items: center; /* Center content horizontally */
+    overflow: hidden; /* Prevent content overflow during transition */
+    position: relative; /* Needed if you want absolute positioning inside */
+    padding: 15px; /* Re-add padding */
 }
 
 .card:hover {
-    transform: translateY(-5px); /* 鼠标悬停时轻微上移 */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* 新增：包裹图片、按钮、俄语的部分 */
-.visible-area {
-    cursor: pointer; /* 让这块区域可点击以显示详情 */
-    width: 100%; /* 占据卡片宽度 */
-    display: flex;
-    flex-direction: column;
+/* --- NEW/MODIFIED STYLES --- */
+
+/* Initially Visible Chinese Area */
+.chinese-display {
+    display: flex; /* Use flex to center content */
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%; /* Take full height */
+    /* No explicit display: block/none here, controlled by parent .card class */
 }
 
-.item-image {
-    max-width: 100px; /* 限制图片最大宽度 */
-    height: 80px; /* 固定图片高度 */
-    object-fit: contain; /* 保持图片比例，完整显示 */
-    margin-bottom: 5px; /* 图片和按钮间距 */
+/* Initially Hidden Full Details Area */
+.full-details {
+    display: none; /* Initially hidden */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+    /* No height: 100% here, let content define height */
 }
 
-/* 新增：播放按钮样式 */
-.play-button {
-    background-color: #5cb85c; /* 绿色按钮 */
+/* State when details should be shown */
+.card.show-details .chinese-display {
+    display: none; /* Hide Chinese when details are shown */
+}
+
+.card.show-details .full-details {
+    display: flex; /* Show details container as flex column */
+}
+/* --- End NEW/MODIFIED STYLES --- */
+
+
+/* Styles for elements INSIDE .full-details */
+.full-details .item-image {
+    max-width: 100px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.full-details .play-button {
+    background-color: #5cb85c;
     color: white;
     border: none;
     padding: 6px 10px;
     font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 8px; /* 按钮和俄语间距 */
+    margin-bottom: 8px;
     transition: background-color 0.2s ease;
 }
 
-.play-button:hover {
-    background-color: #4cae4c; /* 悬停时深一点 */
+.full-details .play-button:hover {
+    background-color: #4cae4c;
 }
 
-.russian-translation {
-    /* display: block; 已被 <p> 替代 */
+.full-details .russian-translation {
     font-size: 14px;
-    color: #777; /* 俄语翻译颜色 */
-    margin: 0 0 10px 0; /* 底部留出间距 */
+    color: #777;
+    margin: 0 0 5px 0; /* Adjust margin */
 }
 
-/* 新增：包裹中文和拼音的容器 */
-.hidden-details {
-    display: none; /* 默认隐藏 */
-    width: 100%; /* 占据卡片宽度 */
-    margin-top: 10px; /* 与上方元素的间距 */
-    padding-top: 10px; /* 内部上边距 */
-    border-top: 1px solid #eee; /* 添加分隔线 */
+.full-details .pinyin {
+    font-size: 16px;
+    color: #555;
+    margin: 0 0 5px 0; /* Adjust margin */
 }
 
-/* 新增：当 hidden-details 有 .visible 类时显示 */
-.hidden-details.visible {
-    display: block;
-}
-
+/* Style for the Chinese word itself (used in both states) */
 .chinese-word {
-    /* display: block; 已被 <p> 替代 */
-    font-size: 24px; /* 汉字大一点 */
+    font-size: 36px; /* Make Chinese character larger for initial view */
     font-weight: bold;
     color: #333;
-    margin: 5px 0; /* 上下边距 */
+    margin: 0; /* Remove margin if centered by flex */
+    line-height: 1.2; /* Adjust line height if needed */
 }
 
-.pinyin {
-    /* display: block; 已被 <p> 替代 */
-    font-size: 16px;
-    color: #555; /* 拼音颜色稍浅 */
-    margin: 5px 0; /* 上下边距 */
-}
-
-/* 新增：隐藏每个卡片内置的 audio 控件 */
+/* Hide the audio player element */
 .audio-player {
     display: none;
 }
-
-/* (可选) 之前的抖动动画，如果需要错误提示可以保留 */
-/*
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-*/
