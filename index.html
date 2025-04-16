@@ -15,78 +15,85 @@
         <div class="card-container">
             <!-- 咖啡 -->
             <div class="card">
-                <div class="visible-area">
+                <!-- 初始显示：中文 -->
+                <div class="chinese-display">
+                    <p class="chinese-word">咖啡</p>
+                </div>
+                <!-- 点击后显示：详情 -->
+                <div class="full-details">
                     <img src="images/coffee.jpg" alt="咖啡" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">кофе</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">咖啡</p>
                     <p class="pinyin">kāfēi</p>
                 </div>
                 <audio class="audio-player" src="audio/kafei.mp3"></audio>
             </div>
+
             <!-- 牛奶 -->
             <div class="card">
-                <div class="visible-area">
+                <div class="chinese-display">
+                    <p class="chinese-word">牛奶</p>
+                </div>
+                <div class="full-details">
                     <img src="images/milk.jpg" alt="牛奶" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">молоко</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">牛奶</p>
                     <p class="pinyin">niúnǎi</p>
                 </div>
                 <audio class="audio-player" src="audio/niunai.mp3"></audio>
             </div>
+
             <!-- 果汁 -->
             <div class="card">
-                <div class="visible-area">
+                <div class="chinese-display">
+                     <p class="chinese-word">果汁</p>
+                </div>
+                <div class="full-details">
                     <img src="images/juice.jpg" alt="果汁" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">сок</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">果汁</p>
                     <p class="pinyin">guǒzhī</p>
                 </div>
                 <audio class="audio-player" src="audio/guozhi.mp3"></audio>
             </div>
+
             <!-- 面包 -->
             <div class="card">
-                <div class="visible-area">
+                 <div class="chinese-display">
+                    <p class="chinese-word">面包</p>
+                </div>
+                <div class="full-details">
                     <img src="images/bread.jpg" alt="面包" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">хлеб</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">面包</p>
                     <p class="pinyin">miànbāo</p>
                 </div>
                 <audio class="audio-player" src="audio/mianbao.mp3"></audio>
             </div>
+
             <!-- 面条 -->
-            <div class="card">
-                <div class="visible-area">
+             <div class="card">
+                 <div class="chinese-display">
+                    <p class="chinese-word">面条</p>
+                </div>
+                <div class="full-details">
                     <img src="images/noodles.jpg" alt="面条" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">лапша</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">面条</p>
                     <p class="pinyin">miàntiáo</p>
                 </div>
                 <audio class="audio-player" src="audio/miantiao.mp3"></audio>
             </div>
+
             <!-- 汤 -->
             <div class="card">
-                <div class="visible-area">
+                <div class="chinese-display">
+                    <p class="chinese-word">汤</p>
+                </div>
+                <div class="full-details">
                     <img src="images/soup.jpg" alt="汤" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">суп</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">汤</p>
                     <p class="pinyin">tāng</p>
                 </div>
                 <audio class="audio-player" src="audio/tang.mp3"></audio>
@@ -97,26 +104,26 @@
         <div class="card-container">
             <!-- 喝 -->
             <div class="card">
-                 <div class="visible-area">
+                 <div class="chinese-display">
+                     <p class="chinese-word">喝</p>
+                 </div>
+                <div class="full-details">
                     <img src="images/drink_icon.png" alt="喝" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">пить</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">喝</p>
                     <p class="pinyin">hē</p>
                 </div>
                 <audio class="audio-player" src="audio/he.mp3"></audio>
             </div>
             <!-- 吃 -->
             <div class="card">
-                <div class="visible-area">
+                <div class="chinese-display">
+                    <p class="chinese-word">吃</p>
+                </div>
+                <div class="full-details">
                     <img src="images/eat_icon.png" alt="吃" class="item-image">
                     <button class="play-button">播放发音</button>
                     <p class="russian-translation">есть/кушать</p>
-                </div>
-                <div class="hidden-details">
-                    <p class="chinese-word">吃</p>
                     <p class="pinyin">chī</p>
                 </div>
                 <audio class="audio-player" src="audio/chi.mp3"></audio>
@@ -124,9 +131,6 @@
         </div>
 
     </div>
-
-    <!-- 不再需要全局 audio 播放器 -->
-    <!-- <audio id="audioPlayer"></audio> -->
 
     <script src="script.js"></script>
 </body>
