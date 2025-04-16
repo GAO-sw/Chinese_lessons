@@ -1,41 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 获取所有卡片元素
     const cards = document.querySelectorAll('.card');
 
-    // 为每个卡片设置交互
     cards.forEach(card => {
-        const visibleArea = card.querySelector('.visible-area');
-        const hiddenDetails = card.querySelector('.hidden-details');
+        // No need to find .chinese-display and .full-details here anymore
+        // We will just toggle a class on the card itself
         const playButton = card.querySelector('.play-button');
-        const audioPlayer = card.querySelector('.audio-player'); // 获取当前卡片的播放器
+        const audioPlayer = card.querySelector('.audio-player');
 
-        // 1. 给卡片的可视区域（图片+按钮+俄语）添加点击事件，用于切换详情显示
-        visibleArea.addEventListener('click', (event) => {
-            // 如果点击的是播放按钮本身，则不执行切换操作
-            // (因为播放按钮有自己的点击事件)
-            if (event.target === playButton) {
+        // 1. Add click listener to the entire card for toggling views
+        card.addEventListener('click', (event) => {
+            // If the click happened ON the play button, do nothing here.
+            // Let the button's own listener handle it.
+            if (event.target === playButton || playButton.contains(event.target)) {
+                // event.target === playButton covers clicking the button itself
+                // playButton.contains(event.target) covers if button has inner elements
                 return;
             }
-            // 切换 hidden-details 的显示/隐藏状态
-            hiddenDetails.classList.toggle('visible');
+
+            // Otherwise, toggle the 'show-details' class on the card
+            card.classList.toggle('show-details');
         });
 
-        // 2. 给播放按钮添加点击事件
+        // 2. Add click listener specifically to the play button
         playButton.addEventListener('click', (event) => {
-            // 阻止事件冒泡，防止点击按钮时触发 visibleArea 的点击事件
+            // IMPORTANT: Stop this click from bubbling up to the card's listener
             event.stopPropagation();
 
-            // 检查音频播放器是否存在
             if (audioPlayer && audioPlayer.src) {
-                // 尝试暂停并重置播放时间，以便可以重复点击播放
                 audioPlayer.pause();
                 audioPlayer.currentTime = 0;
-                // 播放音频
                 audioPlayer.play().catch(error => {
                     console.error("无法播放音频:", error, audioPlayer.src);
-                    // 可以在这里添加视觉反馈，比如按钮变红或抖动
-                    playButton.style.backgroundColor = '#d9534f'; // 临时变红
-                    setTimeout(() => { playButton.style.backgroundColor = ''; }, 1000); // 1秒后恢复
+                    playButton.style.backgroundColor = '#d9534f'; // Indicate error
+                    setTimeout(() => { playButton.style.backgroundColor = ''; }, 1000);
                 });
             } else {
                 console.warn("未找到音频播放器或音频源:", card);
