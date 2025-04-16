@@ -1,3 +1,4 @@
+/* style.css */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #f0f8ff; /* 淡蓝色背景 */
@@ -43,10 +44,10 @@ h2 {
     padding: 15px;
     width: 180px; /* 固定卡片宽度 */
     text-align: center;
-    cursor: pointer; /* 鼠标变成手形 */
+    /* cursor: pointer; 保留或移除，看你希望哪里触发 */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* 平滑过渡效果 */
     display: flex;
-    flex-direction: column; /* 图片和文字垂直排列 */
+    flex-direction: column; /* 内部元素垂直排列 */
     align-items: center; /* 水平居中 */
 }
 
@@ -55,34 +56,85 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
 }
 
+/* 新增：包裹图片、按钮、俄语的部分 */
+.visible-area {
+    cursor: pointer; /* 让这块区域可点击以显示详情 */
+    width: 100%; /* 占据卡片宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item-image {
     max-width: 100px; /* 限制图片最大宽度 */
     height: 80px; /* 固定图片高度 */
     object-fit: contain; /* 保持图片比例，完整显示 */
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* 图片和按钮间距 */
 }
 
-.text-content {
-    margin-top: 10px;
+/* 新增：播放按钮样式 */
+.play-button {
+    background-color: #5cb85c; /* 绿色按钮 */
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 8px; /* 按钮和俄语间距 */
+    transition: background-color 0.2s ease;
 }
 
-.chinese-word {
-    display: block; /* 独占一行 */
-    font-size: 24px; /* 汉字大一点 */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.pinyin {
-    display: block;
-    font-size: 16px;
-    color: #555; /* 拼音颜色稍浅 */
-    margin-bottom: 5px;
+.play-button:hover {
+    background-color: #4cae4c; /* 悬停时深一点 */
 }
 
 .russian-translation {
-    display: block;
+    /* display: block; 已被 <p> 替代 */
     font-size: 14px;
-    color: #777; /* 俄语翻译颜色更浅 */
+    color: #777; /* 俄语翻译颜色 */
+    margin: 0 0 10px 0; /* 底部留出间距 */
 }
+
+/* 新增：包裹中文和拼音的容器 */
+.hidden-details {
+    display: none; /* 默认隐藏 */
+    width: 100%; /* 占据卡片宽度 */
+    margin-top: 10px; /* 与上方元素的间距 */
+    padding-top: 10px; /* 内部上边距 */
+    border-top: 1px solid #eee; /* 添加分隔线 */
+}
+
+/* 新增：当 hidden-details 有 .visible 类时显示 */
+.hidden-details.visible {
+    display: block;
+}
+
+.chinese-word {
+    /* display: block; 已被 <p> 替代 */
+    font-size: 24px; /* 汉字大一点 */
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0; /* 上下边距 */
+}
+
+.pinyin {
+    /* display: block; 已被 <p> 替代 */
+    font-size: 16px;
+    color: #555; /* 拼音颜色稍浅 */
+    margin: 5px 0; /* 上下边距 */
+}
+
+/* 新增：隐藏每个卡片内置的 audio 控件 */
+.audio-player {
+    display: none;
+}
+
+/* (可选) 之前的抖动动画，如果需要错误提示可以保留 */
+/*
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+*/
