@@ -1,42 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 获取所有卡片元素
     const cards = document.querySelectorAll('.card');
-    // 获取用于播放音频的 audio 元素
-    const audioPlayer = document.getElementById('audioPlayer');
 
-    // 为每个卡片添加点击事件监听器
+    // 为每个卡片设置交互
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            // 从卡片的 data-audio 属性获取音频文件路径
-            const audioSrc = card.dataset.audio;
+        const visibleArea = card.querySelector('.visible-area');
+        const hiddenDetails = card.querySelector('.hidden-details');
+        const playButton = card.querySelector('.play-button');
+        const audioPlayer = card.querySelector('.audio-player'); // 获取当前卡片的播放器
 
-            // 检查音频路径是否存在
-            if (audioSrc) {
-                // 设置 audio 元素的音频源
-                audioPlayer.src = audioSrc;
-                // 尝试播放音频
+        // 1. 给卡片的可视区域（图片+按钮+俄语）添加点击事件，用于切换详情显示
+        visibleArea.addEventListener('click', (event) => {
+            // 如果点击的是播放按钮本身，则不执行切换操作
+            // (因为播放按钮有自己的点击事件)
+            if (event.target === playButton) {
+                return;
+            }
+            // 切换 hidden-details 的显示/隐藏状态
+            hiddenDetails.classList.toggle('visible');
+        });
+
+        // 2. 给播放按钮添加点击事件
+        playButton.addEventListener('click', (event) => {
+            // 阻止事件冒泡，防止点击按钮时触发 visibleArea 的点击事件
+            event.stopPropagation();
+
+            // 检查音频播放器是否存在
+            if (audioPlayer && audioPlayer.src) {
+                // 尝试暂停并重置播放时间，以便可以重复点击播放
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+                // 播放音频
                 audioPlayer.play().catch(error => {
-                    // 如果播放失败（例如文件不存在或浏览器限制），在控制台打印错误
-                    console.error("无法播放音频:", error);
-                    // 你可以在这里给用户一个视觉提示，比如卡片闪烁红色
-                    card.style.animation = 'shake 0.5s';
-                    setTimeout(() => card.style.animation = '', 500); // 移除动画
+                    console.error("无法播放音频:", error, audioPlayer.src);
+                    // 可以在这里添加视觉反馈，比如按钮变红或抖动
+                    playButton.style.backgroundColor = '#d9534f'; // 临时变红
+                    setTimeout(() => { playButton.style.backgroundColor = ''; }, 1000); // 1秒后恢复
                 });
             } else {
-                console.warn("未找到音频文件路径:", card);
+                console.warn("未找到音频播放器或音频源:", card);
             }
         });
     });
 });
-
-// (可选) 添加一个简单的抖动动画效果的 CSS（可以加在 style.css 里）
-/*
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-*/
-// 如果要在 style.css 中使用上面的动画，请取消 script.js 中相关行的注释
-// 以及在 style.css 文件末尾添加 @keyframes shake { ... } 代码块。
-// 目前 script.js 中处理播放错误的代码是添加和移除这个动画。
