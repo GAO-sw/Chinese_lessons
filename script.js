@@ -5,37 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach(card => {
         const playButton = card.querySelector('.play-button');
         const audioPlayer = card.querySelector('.audio-player');
-        const fullDetails = card.querySelector('.full-details'); // Needed for the check below
 
-        // 1. Add click listener to the entire card for toggling views
+        // 1. Simplified click listener for the entire card for toggling views
         card.addEventListener('click', (event) => {
-            // If the click happened ON the play button OR inside the full-details area
-            // AND the details are currently shown, do nothing here, *except* for the button itself.
-            if (card.classList.contains('show-details') && fullDetails.contains(event.target)) {
-                // If the click is exactly on the play button or its children, let the button's handler manage it.
-                if (event.target === playButton || playButton.contains(event.target)) {
-                    // Do nothing here, let the button listener below handle the click and propagation stop.
-                } else {
-                    // If click is inside details but *not* on the button, prevent the card from toggling off.
-                    return;
-                }
+            // Check if the click was on the play button or its children
+            if (playButton && (event.target === playButton || playButton.contains(event.target))) {
+                // If yes, do nothing in this listener. The button's own listener will handle it.
+                return;
             }
-            // If the click is on the play button when the card is *closed*, prevent toggle.
-            // The button listener will handle playing the sound.
-            else if (!card.classList.contains('show-details') && (event.target === playButton || playButton.contains(event.target))) {
-                 return;
-            }
-             else {
-                // Otherwise (click on chinese-display area, or outside details when open), toggle the 'show-details' class.
-                card.classList.toggle('show-details');
-            }
+
+            // Otherwise, toggle the 'show-details' class on the card.
+            // This will now correctly show details if hidden, and hide them if shown.
+            card.classList.toggle('show-details');
         });
 
         // 2. Add click listener specifically to the play button
         if (playButton) { // Check if button exists
              playButton.addEventListener('click', (event) => {
-                // IMPORTANT: Stop this click from bubbling up to the card's listener
-                // This prevents the card from toggling when the button is clicked.
+                // IMPORTANT: Stop this click from bubbling up to the card's listener.
+                // This prevents the card from toggling when only the sound should play.
                 event.stopPropagation();
 
                 if (audioPlayer && audioPlayer.src) {
@@ -43,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     audioPlayer.currentTime = 0;
                     audioPlayer.play().catch(error => {
                         console.error("无法播放音频:", error, audioPlayer.src);
-                        // Indicate error visually on the button briefly
                         const originalColor = playButton.style.backgroundColor;
                         playButton.style.backgroundColor = '#d9534f';
                         setTimeout(() => { playButton.style.backgroundColor = originalColor; }, 1000);
@@ -55,18 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Sentence Logic ---
+    // --- Sentence Logic (Unchanged) ---
     const sentenceItems = document.querySelectorAll('.sentence-item');
 
     sentenceItems.forEach(item => {
         item.addEventListener('click', () => {
             const russianSentence = item.querySelector('.russian-sentence');
             if (russianSentence) {
-                // Toggle display: if currently hidden or unset, show inline; otherwise, hide.
                 if (russianSentence.style.display === 'none' || russianSentence.style.display === '') {
-                    russianSentence.style.display = 'inline'; // Show it inline next to the Chinese
+                    russianSentence.style.display = 'inline';
                 } else {
-                    russianSentence.style.display = 'none'; // Hide it
+                    russianSentence.style.display = 'none';
                 }
             }
         });
