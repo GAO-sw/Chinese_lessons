@@ -3,207 +3,626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中文学习：词汇和句子</title>
+    <title>中文学习：词汇与句子</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="main-container">
 
-    <div class="container">
-        <h1>Урок китайского (中文课)</h1>
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" data-page="page-1">第1页: 词汇卡片与句子</button>
+            <button class="tab-button" data-page="page-2">第2页: 词汇表</button>
+        </div>
 
-        <h2>Существительные (名词)</h2>
-        <div class="card-container">
-            <!-- 咖啡 -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">咖啡</p></div>
-                <div class="full-details">
-                    <img src="images/coffee.jpg" alt="咖啡" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">кофе</p>
-                    <p class="pinyin">kāfēi</p>
+        <!-- Page 1: Existing Content -->
+        <div id="page-1" class="page active">
+            <div class="container">
+                <h1>Урок китайского (中文课) - Страница 1</h1>
+
+                <h2>Существительные (名词)</h2>
+                <div class="card-container">
+                    <!-- 咖啡 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">咖啡</p></div>
+                        <div class="full-details">
+                            <img src="images/coffee.jpg" alt="咖啡" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">кофе</p>
+                            <p class="pinyin">kāfēi</p>
+                        </div>
+                        <audio class="audio-player" src="audio/kafei.mp3"></audio>
+                    </div>
+                    <!-- 牛奶 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">牛奶</p></div>
+                        <div class="full-details">
+                            <img src="images/milk.jpg" alt="牛奶" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">молоко</p>
+                            <p class="pinyin">niúnǎi</p>
+                        </div>
+                        <audio class="audio-player" src="audio/niunai.mp3"></audio>
+                    </div>
+                    <!-- 果汁 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">果汁</p></div>
+                        <div class="full-details">
+                            <img src="images/juice.jpg" alt="果汁" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">сок</p>
+                            <p class="pinyin">guǒzhī</p>
+                        </div>
+                        <audio class="audio-player" src="audio/guozhi.mp3"></audio>
+                    </div>
+                    <!-- 面包 -->
+                    <div class="card">
+                         <div class="chinese-display"><p class="chinese-word">面包</p></div>
+                        <div class="full-details">
+                            <img src="images/bread.jpg" alt="面包" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">хлеб</p>
+                            <p class="pinyin">miànbāo</p>
+                        </div>
+                        <audio class="audio-player" src="audio/mianbao.mp3"></audio>
+                    </div>
+                    <!-- 面条 -->
+                     <div class="card">
+                         <div class="chinese-display"><p class="chinese-word">面条</p></div>
+                        <div class="full-details">
+                            <img src="images/noodles.jpg" alt="面条" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">лапша</p>
+                            <p class="pinyin">miàntiáo</p>
+                        </div>
+                        <audio class="audio-player" src="audio/miantiao.mp3"></audio>
+                    </div>
+                    <!-- 汤 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">汤</p></div>
+                        <div class="full-details">
+                            <img src="images/soup.jpg" alt="汤" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">суп</p>
+                            <p class="pinyin">tāng</p>
+                        </div>
+                        <audio class="audio-player" src="audio/tang.mp3"></audio>
+                    </div>
                 </div>
-                <audio class="audio-player" src="audio/kafei.mp3"></audio>
-            </div>
-            <!-- 牛奶 -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">牛奶</p></div>
-                <div class="full-details">
-                    <img src="images/milk.jpg" alt="牛奶" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">молоко</p>
-                    <p class="pinyin">niúnǎi</p>
+
+                <h2>Глаголы (动词)</h2>
+                <div class="card-container">
+                    <!-- 吃 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">吃</p></div>
+                        <div class="full-details">
+                            <img src="images/eat_icon.png" alt="吃" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">есть/кушать</p>
+                            <p class="pinyin">chī</p>
+                        </div>
+                        <audio class="audio-player" src="audio/chi.mp3"></audio>
+                    </div>
+                    <!-- 喝 -->
+                    <div class="card">
+                         <div class="chinese-display"><p class="chinese-word">喝</p></div>
+                        <div class="full-details">
+                            <img src="images/drink_icon.png" alt="喝" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">пить</p>
+                            <p class="pinyin">hē</p>
+                        </div>
+                        <audio class="audio-player" src="audio/he.mp3"></audio>
+                    </div>
+                    <!-- 想 -->
+                    <div class="card">
+                        <div class="chinese-display"><p class="chinese-word">想</p></div>
+                        <div class="full-details">
+                            <img src="images/want_icon.jpg" alt="想" class="item-image">
+                            <button class="play-button">播放发音</button>
+                            <p class="russian-translation">хотеть</p>
+                            <p class="pinyin">xiǎng</p>
+                        </div>
+                        <audio class="audio-player" src="audio/xiang.mp3"></audio>
+                    </div>
                 </div>
-                <audio class="audio-player" src="audio/niunai.mp3"></audio>
-            </div>
-            <!-- 果汁 -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">果汁</p></div>
-                <div class="full-details">
-                    <img src="images/juice.jpg" alt="果汁" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">сок</p>
-                    <p class="pinyin">guǒzhī</p>
+
+                <!-- 句子练习区域 -->
+                <h2>Предложения (句子练习)</h2>
+                <div class="sentence-container">
+                     <p class="sentence-item"><span class="chinese-sentence">1. 我想喝牛奶。</span><span class="russian-sentence" style="display: none;"> Я хочу выпить молока. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">2. 你昨天吃了什么？</span><span class="russian-sentence" style="display: none;"> Что ты ела вчера? </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">3. 我昨天吃了面包。</span><span class="russian-sentence" style="display: none;"> Вчера я ела хлеб. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">4. 这是爸爸的咖啡吗？</span><span class="russian-sentence" style="display: none;"> Это папин кофе? </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">5. 不是，这是我的咖啡。</span><span class="russian-sentence" style="display: none;"> Нет, это мой кофе. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">6. 妈妈今天中午在吃面条。</span><span class="russian-sentence" style="display: none;"> Мама сегодня в обед ест лапшу. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">7. 哥哥明天会喝果汁。</span><span class="russian-sentence" style="display: none;"> Старший брат завтра будет пить сок. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">8. 你喜欢喝汤吗？</span><span class="russian-sentence" style="display: none;"> Ты любишь пить суп? </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">9. 我很喜欢喝汤。</span><span class="russian-sentence" style="display: none;"> Я очень люблю пить суп. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">10. 这个面包太小了。</span><span class="russian-sentence" style="display: none;"> Этот хлеб слишком маленький. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">11. 他今天早上喝了咖啡。</span><span class="russian-sentence" style="display: none;"> Он сегодня утром пил кофе. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">12. 姐姐喜欢吃面条吗？</span><span class="russian-sentence" style="display: none;"> Старшая сестра любит есть лапшу? </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">13. 她很喜欢吃面条。</span><span class="russian-sentence" style="display: none;"> Она очень любит есть лапшу. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">14. 这个汤太少了。</span><span class="russian-sentence" style="display: none;"> Этого супа слишком мало. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">15. 爸爸妈妈都喜欢喝牛奶。</span><span class="russian-sentence" style="display: none;"> Папа и мама оба любят пить молоко. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">16. 我想吃三个小面包。</span><span class="russian-sentence" style="display: none;"> Я хочу съесть три маленьких хлеба. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">17. 你明天晚上会吃什么？</span><span class="russian-sentence" style="display: none;"> Что ты будешь есть завтра вечером? </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">18. 哥哥在喝果汁。</span><span class="russian-sentence" style="display: none;"> Старший брат сейчас пьёт сок. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">19. 姐姐今天喝了很多果汁。</span><span class="russian-sentence" style="display: none;"> Старшая сестра сегодня выпила много сока. </span></p>
+                     <p class="sentence-item"><span class="chinese-sentence">20. 这是什么汤？</span><span class="russian-sentence" style="display: none;"> Какой это суп? </span></p>
                 </div>
-                <audio class="audio-player" src="audio/guozhi.mp3"></audio>
-            </div>
-            <!-- 面包 -->
-            <div class="card">
-                 <div class="chinese-display"><p class="chinese-word">面包</p></div>
-                <div class="full-details">
-                    <img src="images/bread.jpg" alt="面包" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">хлеб</p>
-                    <p class="pinyin">miànbāo</p>
-                </div>
-                <audio class="audio-player" src="audio/mianbao.mp3"></audio>
-            </div>
-            <!-- 面条 -->
-             <div class="card">
-                 <div class="chinese-display"><p class="chinese-word">面条</p></div>
-                <div class="full-details">
-                    <img src="images/noodles.jpg" alt="面条" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">лапша</p>
-                    <p class="pinyin">miàntiáo</p>
-                </div>
-                <audio class="audio-player" src="audio/miantiao.mp3"></audio>
-            </div>
-            <!-- 汤 -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">汤</p></div>
-                <div class="full-details">
-                    <img src="images/soup.jpg" alt="汤" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">суп</p>
-                    <p class="pinyin">tāng</p>
-                </div>
-                <audio class="audio-player" src="audio/tang.mp3"></audio>
             </div>
         </div>
 
-        <h2>Глаголы (动词)</h2>
-        <div class="card-container">
-            <!-- 吃 -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">吃</p></div>
-                <div class="full-details">
-                    <img src="images/eat_icon.png" alt="吃" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">есть/кушать</p>
-                    <p class="pinyin">chī</p>
-                </div>
-                <audio class="audio-player" src="audio/chi.mp3"></audio>
-            </div>
-            <!-- 喝 -->
-            <div class="card">
-                 <div class="chinese-display"><p class="chinese-word">喝</p></div>
-                <div class="full-details">
-                    <img src="images/drink_icon.png" alt="喝" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">пить</p>
-                    <p class="pinyin">hē</p>
-                </div>
-                <audio class="audio-player" src="audio/he.mp3"></audio>
-            </div>
-            <!-- 想 (新增) -->
-            <div class="card">
-                <div class="chinese-display"><p class="chinese-word">想</p></div>
-                <div class="full-details">
-                    <img src="images/want_icon.jpg" alt="想" class="item-image">
-                    <button class="play-button">播放发音</button>
-                    <p class="russian-translation">хотеть</p>
-                    <p class="pinyin">xiǎng</p>
-                </div>
-                <audio class="audio-player" src="audio/xiang.mp3"></audio>
-            </div>
-        </div>
+        <!-- Page 2: New Vocabulary List -->
+        <div id="page-2" class="page">
+            <div class="container">
+                <h1>Урок китайского (中文课) - Страница 2: Словарь</h1>
 
-        <!-- 句子练习区域 - 使用更新后的翻译 -->
-        <h2>Предложения (句子练习)</h2>
-        <div class="sentence-container">
-            <p class="sentence-item">
-                <span class="chinese-sentence">1. 我想喝牛奶。</span>
-                <span class="russian-sentence" style="display: none;"> Я хочу выпить молока. </span>
-            </p>
-            <p class="sentence-item">
-                <span class="chinese-sentence">2. 你昨天吃了什么？</span>
-                <span class="russian-sentence" style="display: none;"> Что ты ела вчера? </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">3. 我昨天吃了面包。</span>
-                <span class="russian-sentence" style="display: none;"> Вчера я ела хлеб. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">4. 这是爸爸的咖啡吗？</span>
-                <span class="russian-sentence" style="display: none;"> Это папин кофе? </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">5. 不是，这是我的咖啡。</span>
-                <span class="russian-sentence" style="display: none;"> Нет, это мой кофе. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">6. 妈妈今天中午在吃面条。</span>
-                <span class="russian-sentence" style="display: none;"> Мама сегодня в обед ест лапшу. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">7. 哥哥明天会喝果汁。</span>
-                <span class="russian-sentence" style="display: none;"> Старший брат завтра будет пить сок. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">8. 你喜欢喝汤吗？</span>
-                <span class="russian-sentence" style="display: none;"> Ты любишь пить суп? </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">9. 我很喜欢喝汤。</span>
-                <span class="russian-sentence" style="display: none;"> Я очень люблю пить суп. </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">10. 这个面包太小了。</span>
-                 <span class="russian-sentence" style="display: none;"> Этот хлеб слишком маленький. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">11. 他今天早上喝了咖啡。</span>
-                <span class="russian-sentence" style="display: none;"> Он сегодня утром пил кофе. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">12. 姐姐喜欢吃面条吗？</span>
-                <span class="russian-sentence" style="display: none;"> Старшая сестра любит есть лапшу? </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">13. 她很喜欢吃面条。</span>
-                <span class="russian-sentence" style="display: none;"> Она очень любит есть лапшу. </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">14. 这个汤太少了。</span>
-                <span class="russian-sentence" style="display: none;"> Этого супа слишком мало. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">15. 爸爸妈妈都喜欢喝牛奶。</span>
-                <span class="russian-sentence" style="display: none;"> Папа и мама оба любят пить молоко. </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">16. 我想吃三个小面包。</span>
-                <span class="russian-sentence" style="display: none;"> Я хочу съесть три маленьких хлеба. </span> <!-- Updated -->
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">17. 你明天晚上会吃什么？</span>
-                <span class="russian-sentence" style="display: none;"> Что ты будешь есть завтра вечером? </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">18. 哥哥在喝果汁。</span>
-                <span class="russian-sentence" style="display: none;"> Старший брат сейчас пьёт сок. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">19. 姐姐今天喝了很多果汁。</span>
-                <span class="russian-sentence" style="display: none;"> Старшая сестра сегодня выпила много сока. </span>
-            </p>
-             <p class="sentence-item">
-                <span class="chinese-sentence">20. 这是什么汤？</span>
-                <span class="russian-sentence" style="display: none;"> Какой это суп? </span> <!-- Updated -->
-            </p>
-        </div>
+                <div class="vocab-section">
+                    <h2>名词 (míng cí) - существительное</h2>
 
-    </div>
+                    <h3>关于人(guān yú rén de) - о людях：</h3>
+                    <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 中国</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(zhōng guó)</span> - <span class="russian-vocab">Китай</span>
+                                <p class="explanation">"中" — средний ,центр "中国" — в древнем Китае люди считали, что их страна находится в центре мира, поэтому называли себя "中国".</p>
+                            </div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 俄国</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(é guó)</span> - <span class="russian-vocab">Россия</span>
+                                <p class="explanation">"俄" — произношение в китайском языке похоже на произношение "Россия" в русском языке, поэтому в китайском языке страну называют "俄国".</p>
+                            </div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 人</span>
+                            <div class="vocab-details"><span class="pinyin">(rén)</span> - <span class="russian-vocab">человек</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 国</span>
+                            <div class="vocab-details"><span class="pinyin">(guó)</span> - <span class="russian-vocab">страна</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 家</span>
+                            <div class="vocab-details"><span class="pinyin">(jiā)</span> - <span class="russian-vocab">дом, семья</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">6. 国家</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(guó jiā)</span> - <span class="russian-vocab">страна</span>
+                                <p class="explanation">Китайцы считают, что "国" — это собрание "家", поэтому "国家" = "国".</p>
+                            </div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">7. 中国人</span>
+                            <div class="vocab-details"><span class="pinyin">(zhōng guó rén)</span> - <span class="russian-vocab">китаец</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">8. 俄国人</span>
+                            <div class="vocab-details"><span class="pinyin">(é guó rén)</span> - <span class="russian-vocab">русский</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">9. 爸爸</span>
+                            <div class="vocab-details"><span class="pinyin">(bà ba)</span> - <span class="russian-vocab">папа</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">10. 妈妈</span>
+                            <div class="vocab-details"><span class="pinyin">(mā ma)</span> - <span class="russian-vocab">мама</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">11. 姐姐</span>
+                            <div class="vocab-details"><span class="pinyin">(jiě jie)</span> - <span class="russian-vocab">старшая сестра</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">12. 哥哥</span>
+                            <div class="vocab-details"><span class="pinyin">(gē ge)</span> - <span class="russian-vocab">старший брат</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">13. 朋友</span>
+                            <div class="vocab-details"><span class="pinyin">(péng yǒu)</span> - <span class="russian-vocab">друг</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">14. 小朋友</span>
+                            <div class="vocab-details"><span class="pinyin">(xiǎo péng yǒu)</span> - <span class="russian-vocab">ребёнок</span></div>
+                        </div>
+                    </div>
+
+                    <h3>关于物品 (guān yú wù pǐn) - о предметах：</h3>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 书</span>
+                            <div class="vocab-details"><span class="pinyin">(shū)</span> - <span class="russian-vocab">книга</span></div>
+                        </div>
+                    </div>
+
+                    <h3>关于方位的 (guān yú fāng wèi de) - о направлениях：</h3>
+                     <div class="vocab-list">
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">1. 上</span>
+                            <div class="vocab-details"><span class="pinyin">(shàng)</span> - <span class="russian-vocab">верх, вверх</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 中</span>
+                            <div class="vocab-details"><span class="pinyin">(zhōng)</span> - <span class="russian-vocab">середина，центр</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 下</span>
+                            <div class="vocab-details"><span class="pinyin">(xià)</span> - <span class="russian-vocab">низ, вниз</span></div>
+                        </div>
+                        <img src="https://secure2.wostatic.cn/static/fuUy5MkzCmai9ET84LTDmY/image.png?auth_key=1745490052-hGDTtuSuD3SzLgJ2uufnn6-0-f79541f0fa7b00d73523cf9c54d7ba93" alt="方位图示" class="direction-image">
+                    </div>
+
+                     <h3>关于时间 (guān yú shí jiān) - о времени：</h3>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 上午</span>
+                            <div class="vocab-details"><span class="pinyin">(shàng wǔ)</span> - <span class="russian-vocab">утро до полудня/перед обедом , 8:00-11:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 中午</span>
+                            <div class="vocab-details"><span class="pinyin">(zhōng wǔ)</span> - <span class="russian-vocab">полдень/обед 11:00-13:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 下午</span>
+                            <div class="vocab-details"><span class="pinyin">(xià wǔ)</span> - <span class="russian-vocab">после полудня, после обеда 13:00-18:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 早上</span>
+                            <div class="vocab-details"><span class="pinyin">(zǎo shàng)</span> - <span class="russian-vocab">утро 6:00-8:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 晚上</span>
+                            <div class="vocab-details"><span class="pinyin">(wǎn shàng)</span> - <span class="russian-vocab">вечер 18:00-00:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">6. 午</span>
+                            <div class="vocab-details"><span class="pinyin">(wǔ)</span> - <span class="russian-vocab">обед 12:00</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">7. 天</span>
+                            <div class="vocab-details"><span class="pinyin">(tiān)</span> - <span class="russian-vocab">день (一天-один день，两天- два дня)</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">8. 昨天</span>
+                            <div class="vocab-details"><span class="pinyin">(zuó tiān)</span> - <span class="russian-vocab">вчера</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">9. 今天</span>
+                            <div class="vocab-details"><span class="pinyin">(jīn tiān)</span> - <span class="russian-vocab">сегодня</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">10. 明天</span>
+                            <div class="vocab-details"><span class="pinyin">(míng tiān)</span> - <span class="russian-vocab">завтра</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="vocab-section">
+                    <h2>动词 (dòng cí) - глагол</h2>
+                    <h3>普通动词（pǔ tōng dòng cí）- обычные глаголы</h3>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 听</span>
+                            <div class="vocab-details"><span class="pinyin">(tīng)</span> - <span class="russian-vocab">слушать</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 说</span>
+                            <div class="vocab-details"><span class="pinyin">(shuō)</span> - <span class="russian-vocab">говорить</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 读</span>
+                            <div class="vocab-details"><span class="pinyin">(dú)</span> - <span class="russian-vocab">читать</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 写</span>
+                            <div class="vocab-details"><span class="pinyin">(xiě)</span> - <span class="russian-vocab">писать</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 学</span>
+                            <div class="vocab-details"><span class="pinyin">(xué)</span> - <span class="russian-vocab">учить</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">6. 叫</span>
+                            <div class="vocab-details"><span class="pinyin">(jiào)</span> - <span class="russian-vocab">звать, называть</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">7. 知道</span>
+                            <div class="vocab-details"><span class="pinyin">(zhī dào)</span> - <span class="russian-vocab">знать</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">8. 喜欢</span>
+                            <div class="vocab-details"><span class="pinyin">(xǐ huān)</span> - <span class="russian-vocab">нравиться，любить</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">9. 是</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(shì)</span>
+                                <p class="explanation">Примечание:</p>
+                                <ol>
+                                    <li>являться: 我是老师 - Я учитель/Я являюсь учителем.</li>
+                                    <li>Функция выражения суждения, "是" в данном случае не имеет прямого аналога в русском языке: 他是谁？ - Кто он?</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">10. 会</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(huì)</span>
+                                <p class="explanation">Примечание:</p>
+                                <ol>
+                                    <li>Означает действие, которое должно произойти в будущем, и ставится перед глаголом: 我明天会学中文 - Завтра я буду учить китайский язык. 她会来我家 - Она придет в мой дом.</li>
+                                </ol>
+                            </div>
+                        </div>
+                     </div>
+
+                    <h3>动词词组（dòng cí cí zǔ）- глагольная фраза</h3>
+                     <div class="vocab-list">
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">1. 你好</span>
+                            <div class="vocab-details"><span class="pinyin">(nǐ hǎo)</span> - <span class="russian-vocab">привет</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 再见</span>
+                            <div class="vocab-details"><span class="pinyin">(zài jiàn)</span> - <span class="russian-vocab">до свидания</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 上课</span>
+                            <div class="vocab-details"><span class="pinyin">(shàng kè)</span> - <span class="russian-vocab">yрок наченем</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 下课</span>
+                            <div class="vocab-details"><span class="pinyin">(xià kè)</span> - <span class="russian-vocab">yрок окончен</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h2>形容词 (xíng róng cí) - прилагательное</h2>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 好</span>
+                            <div class="vocab-details"><span class="pinyin">(hǎo)</span> - <span class="russian-vocab">хороший</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">2. 大</span>
+                            <div class="vocab-details"><span class="pinyin">(dà)</span> - <span class="russian-vocab">большой</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">3. 小</span>
+                            <div class="vocab-details"><span class="pinyin">(xiǎo)</span> - <span class="russian-vocab">маленький</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">4. 多</span>
+                            <div class="vocab-details"><span class="pinyin">(duō)</span> - <span class="russian-vocab">много</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 少</span>
+                            <div class="vocab-details"><span class="pinyin">(shǎo)</span> - <span class="russian-vocab">мало</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="vocab-section">
+                    <h2>副词 (fù cí) - наречие</h2>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 太</span>
+                            <div class="vocab-details"><span class="pinyin">(tài)</span> - <span class="russian-vocab">слишком (太多 - Слишком много.)</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">2. 也</span>
+                            <div class="vocab-details"><span class="pinyin">(yě)</span> - <span class="russian-vocab">тоже</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">3. 很</span>
+                            <div class="vocab-details"><span class="pinyin">(hěn)</span> - <span class="russian-vocab">очень</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">4. 都</span>
+                            <div class="vocab-details"><span class="pinyin">(dōu)</span> - <span class="russian-vocab">все (我都知道 - Я все знаю)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="vocab-section">
+                    <h2>代词 (dài cí) - местоимение</h2>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 你</span>
+                            <div class="vocab-details"><span class="pinyin">(nǐ)</span> - <span class="russian-vocab">ты</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 你的</span>
+                            <div class="vocab-details"><span class="pinyin">(nǐ de)</span> - <span class="russian-vocab">твой</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 我</span>
+                            <div class="vocab-details"><span class="pinyin">(wǒ)</span> - <span class="russian-vocab">я</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 我的</span>
+                            <div class="vocab-details"><span class="pinyin">(wǒ de)</span> - <span class="russian-vocab">мой</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 他</span>
+                            <div class="vocab-details"><span class="pinyin">(tā)</span> - <span class="russian-vocab">он</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">6. 他的</span>
+                            <div class="vocab-details"><span class="pinyin">(tā de)</span> - <span class="russian-vocab">его</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">7. 她</span>
+                            <div class="vocab-details"><span class="pinyin">(tā)</span> - <span class="russian-vocab">она</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">8. 她的</span>
+                            <div class="vocab-details"><span class="pinyin">(tā de)</span> - <span class="russian-vocab">её</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">9. 谁</span>
+                            <div class="vocab-details"><span class="pinyin">(shuí/shéi)</span> - <span class="russian-vocab">кто</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">10. 这个</span>
+                            <div class="vocab-details"><span class="pinyin">(zhè ge)</span> - <span class="russian-vocab">это，этот</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">11. 那个</span>
+                            <div class="vocab-details"><span class="pinyin">(nà ge)</span> - <span class="russian-vocab">то，тот</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">12. 什么</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(shén me)</span> - <span class="russian-vocab">(*вопросительное*) что?；какой</span>
+                                <p class="explanation">这是什么? - что это ?<br>什么人？ - [Какой/Что за] человек?</p>
+                            </div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">13. 哪</span>
+                             <div class="vocab-details">
+                                <span class="pinyin">(nǎ)</span>
+                                <p class="explanation">Примечание:</p>
+                                <ol>
+                                    <li>где: 这是哪？ Где это?</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="vocab-section">
+                    <h2>介词 (jiè ci) - предлог</h2>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 在</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(zài)</span>
+                                <p class="explanation">Примечание:</p>
+                                <ol>
+                                    <li>в / находиться: 我在中国 - Я в Китае / Я нахожусь в Китае</li>
+                                    <li>Означает, что действие происходит в данный момент. Обычно располагается перед глаголом: 我在学中文 - Я （сейчас） учу китайский язык.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+                 <div class="vocab-section">
+                    <h2>助词 (zhù cí) - вспомогательное слово</h2>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 吗</span>
+                            <div class="vocab-details">
+                                <span class="pinyin">(ma)</span> - <span class="russian-vocab">‘吗’ в конце предложения означает вопрос.</span>
+                                <p class="explanation">他在家 - Он дома<br>他在家吗？ - он дома?</p>
+                            </div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 了</span>
+                             <div class="vocab-details">
+                                <span class="pinyin">(le)</span> - <span class="russian-vocab">‘了’ после глагола означает, что действие завершено или выполнено.</span>
+                                <p class="explanation">我知道了 - Я (уже) узнал.</p>
+                            </div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 怎么</span>
+                             <div class="vocab-details">
+                                <span class="pinyin">(zěn me)</span> - <span class="russian-vocab">как</span>
+                                <p class="explanation">他怎么学中文？ - Как он учит китайский язык?</p>
+                            </div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">4. 的</span>
+                             <div class="vocab-details">
+                                <span class="pinyin">(de)</span>
+                                <p class="explanation">Примечание: Следует после местоимения, указывая на принадлежность кому-то.<br>
+                                我 (wǒ) - я    我的 (wǒ de) - мой<br>
+                                爸爸 (bà ba) - папа  爸爸的（bà ba de）- папин<br>
+                                她是爸爸的姐姐 - Она сестра папы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="vocab-section">
+                    <h2>量词 (liàng cí) - счётное слово</h2>
+                    <p class="explanation">В отличие от русского языка, в китайском между числительным и существительным требуется счетное слово.<br>
+                    Например:<br>
+                    один человек - 一个人 √<br>
+                    один человек - 一人 ×</p>
+                    <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 个</span>
+                            <div class="vocab-details"><span class="pinyin">(gè)</span> - <span class="russian-vocab">(счётное слово)</span><p class="explanation">один человек - 一个人</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h3>数词 (shù cí) - числительные</h3>
+                     <div class="vocab-list">
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">1. 一</span>
+                            <div class="vocab-details"><span class="pinyin">(yī)</span> - <span class="russian-vocab">один</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">2. 二</span>
+                            <div class="vocab-details"><span class="pinyin">(èr)</span> - <span class="russian-vocab">два</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">3. 三</span>
+                            <div class="vocab-details"><span class="pinyin">(sān)</span> - <span class="russian-vocab">три</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">4. 四</span>
+                            <div class="vocab-details"><span class="pinyin">(sì)</span> - <span class="russian-vocab">четыре</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">5. 五</span>
+                            <div class="vocab-details"><span class="pinyin">(wǔ)</span> - <span class="russian-vocab">пять</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">6. 六</span>
+                            <div class="vocab-details"><span class="pinyin">(liù)</span> - <span class="russian-vocab">шесть</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">7. 七</span>
+                            <div class="vocab-details"><span class="pinyin">(qī)</span> - <span class="russian-vocab">семь</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">8. 八</span>
+                            <div class="vocab-details"><span class="pinyin">(bā)</span> - <span class="russian-vocab">восемь</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">9. 九</span>
+                            <div class="vocab-details"><span class="pinyin">(jiǔ)</span> - <span class="russian-vocab">девять</span></div>
+                        </div>
+                         <div class="vocab-item">
+                            <span class="chinese-vocab">10. 十</span>
+                            <div class="vocab-details"><span class="pinyin">(shí)</span> - <span class="russian-vocab">десять</span></div>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="chinese-vocab">11. 两</span>
+                             <div class="vocab-details">
+                                <span class="pinyin">(liǎng)</span> - <span class="russian-vocab">два (при счёте)</span>
+                                <p class="explanation">两 = 二 。 В качестве счётного слова используется "两", а не "二".<br>
+                                Два человека ： 两个人 √ 二个人 ×<br>
+                                Две страны : 两个国家 √ 二个国家 ×</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End .container for page-2 -->
+        </div> <!-- End #page-2 -->
+
+    </div> <!-- End .main-container -->
 
     <script src="script.js"></script>
 </body>
