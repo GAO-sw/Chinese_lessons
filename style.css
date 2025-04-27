@@ -65,22 +65,55 @@ body {
     margin: 0 auto; /* Center container within the page div */
 }
 
-h1, h2 {
-    color: #333;
+h1 { /* Page Title */
+    color: #0056b3;
+    font-size: 24px;
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-h1 { color: #0056b3; font-size: 24px; margin-bottom: 30px; }
-h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; margin-top: 40px; font-size: 20px; }
+/* --- Page 1: Lesson Styles --- */
+#page-1 h2 { /* Lesson Title */
+    color: #d9534f;
+    border-bottom: 2px solid #f0ad4e;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    margin-bottom: 25px; /* Space below lesson title */
+    font-size: 22px; /* Slightly larger for lesson titles */
+    text-align: center;
+}
 
-/* --- Page 1: Card Styles (Existing) --- */
+#page-1 h3 { /* Section Title within Lesson (Nouns, Verbs, Sentences) */
+    color: #5a6268; /* Darker grey for section */
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+    border-left: 4px solid #6c757d; /* Grey left border */
+    padding-left: 10px;
+}
+
+.lesson { /* Container for a whole lesson */
+    margin-bottom: 40px; /* Space between lessons */
+}
+
+.lesson-divider { /* Horizontal line between lessons */
+    border: 0;
+    height: 1px;
+    background-color: #dee2e6; /* Light grey */
+    margin: 40px 0; /* Space around the divider */
+}
+
+
+/* --- Page 1: Card Styles (Existing - Applied within Lessons now) --- */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center cards */
     gap: 20px;
     margin-bottom: 30px;
+    padding-left: 10px; /* Minor padding */
+    padding-right: 10px;
 }
 
 .card {
@@ -176,7 +209,7 @@ h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; marg
     display: none;
 }
 
-/* --- Page 1: Sentence Styles (Existing) --- */
+/* --- Page 1: Sentence Styles (Existing - Applied within Lessons now) --- */
 .sentence-container {
     margin-top: 20px;
     background-color: #fff;
@@ -208,17 +241,22 @@ h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; marg
     margin-left: 10px;
 }
 
-/* --- Page 2: Vocabulary List Styles (New) --- */
+/* --- Page 2: Vocabulary List Styles (Existing) --- */
 #page-2 .container { /* Specificity for page 2 container */
     padding-left: 15px;
     padding-right: 15px;
 }
+#page-2 h1 { /* Different h1 style for vocab list */
+    color: #17a2b8; /* Teal color */
+    border-bottom: 2px solid #fd7e14; /* Orange border */
+}
+
 
 .vocab-section {
     margin-bottom: 30px;
 }
 
-.vocab-section h2 { /* Different style for vocab sections */
+.vocab-section h2 { /* Vocab Type Title (Noun, Verb...) */
     color: #28a745; /* Green color */
     border-bottom: 2px solid #ffc107; /* Yellow border */
     text-align: left; /* Align left */
@@ -226,7 +264,7 @@ h2 { color: #d9534f; border-bottom: 2px solid #f0ad4e; padding-bottom: 5px; marg
     margin-top: 30px;
 }
 
-.vocab-section h3 {
+.vocab-section h3 { /* Sub-section Title (About people...) */
     color: #17a2b8; /* Teal color */
     font-size: 18px;
     margin-top: 20px;
