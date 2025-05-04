@@ -1,52 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Tab/Page Switching Logic ---
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const pages = document.querySelectorAll('.page');
+    // --- Table of Contents (ToC) Logic ---
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const contentSections = document.querySelectorAll('.content-section');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetPageId = button.getAttribute('data-page');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetId = link.getAttribute('data-target');
 
-            // Update button active state
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            // Remove active class from all links and hide all sections
+            tocLinks.forEach(lnk => lnk.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('content-active'));
 
-            // Update page visibility
-            pages.forEach(page => {
-                if (page.id === targetPageId) {
-                    page.classList.add('active');
-                } else {
-                    page.classList.remove('active');
-                }
-            });
+            // Add active class to the clicked link
+            link.classList.add('active');
+
+            // Show the target section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('content-active');
+                // Scroll smoothly to the top of the content section if needed
+                // targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                console.error('Target content section not found:', targetId);
+            }
         });
     });
 
-    // --- Page 1: Card Logic ---
-    const page1Cards = document.querySelectorAll('#page-1 .card');
+    // --- Card Logic (Applies to cards in ANY visible section) ---
+    const allCards = document.querySelectorAll('.card'); // Select ALL cards in the document
 
-    page1Cards.forEach(card => {
+    allCards.forEach(card => {
         const playButton = card.querySelector('.play-button');
         const audioPlayer = card.querySelector('.audio-player');
 
         card.addEventListener('click', (event) => {
+            // Prevent toggle if play button is clicked
             if (playButton && (event.target === playButton || playButton.contains(event.target))) {
-                return; // Do nothing if play button clicked
+                return;
             }
             card.classList.toggle('show-details');
         });
 
         if (playButton) {
              playButton.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent card toggle
+                event.stopPropagation(); // Prevent card toggle when playing sound
                 if (audioPlayer && audioPlayer.src) {
-                    audioPlayer.pause();
+                    // Stop any other playing audio first (optional but good practice)
+                    document.querySelectorAll('audio').forEach(audio => audio.pause());
                     audioPlayer.currentTime = 0;
                     audioPlayer.play().catch(error => {
                         console.error("无法播放音频:", error, audioPlayer.src);
                         const originalColor = playButton.style.backgroundColor;
-                        playButton.style.backgroundColor = '#d9534f';
+                        playButton.style.backgroundColor = '#d9534f'; // Indicate error briefly
                         setTimeout(() => { playButton.style.backgroundColor = originalColor; }, 1000);
                     });
                 } else {
@@ -56,13 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Page 1: Sentence Logic ---
-    const page1Sentences = document.querySelectorAll('#page-1 .sentence-item');
+    // --- Sentence Logic (Applies to sentences in ANY visible section) ---
+    const allSentences = document.querySelectorAll('.sentence-item'); // Select ALL sentence items
 
-    page1Sentences.forEach(item => {
+    allSentences.forEach(item => {
+        const russianSentence = item.querySelector('.russian-sentence');
+        // Hide Russian sentence initially via JS (backup if CSS fails or for clarity)
+        if (russianSentence) {
+            russianSentence.style.display = 'none';
+        }
+
         item.addEventListener('click', () => {
-            const russianSentence = item.querySelector('.russian-sentence');
             if (russianSentence) {
+                // Toggle display
                 if (russianSentence.style.display === 'none' || russianSentence.style.display === '') {
                     russianSentence.style.display = 'inline';
                 } else {
@@ -72,16 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Page 2: Vocabulary List Logic ---
-    const page2VocabItems = document.querySelectorAll('#page-2 .vocab-item');
+    // --- Vocabulary List Page Logic (Page 2 Vocab Items) ---
+    const page2VocabItems = document.querySelectorAll('#vocab-list-page .vocab-item');
 
     page2VocabItems.forEach(item => {
         item.addEventListener('click', () => {
             const details = item.querySelector('.vocab-details');
             if (details) {
-                 // Toggle display: if currently hidden or unset, show block; otherwise, hide.
+                 // Toggle display
                 if (details.style.display === 'none' || details.style.display === '') {
-                    details.style.display = 'block'; // Use block for multi-line details
+                    details.style.display = 'block';
                 } else {
                     details.style.display = 'none';
                 }
