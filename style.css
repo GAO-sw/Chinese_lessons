@@ -1,119 +1,143 @@
 /* style.css */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f0f8ff; /* Light blue background */
+    background-color: #eef2f7; /* Slightly different background */
     margin: 0;
-    padding: 0; /* Remove default padding */
-    display: flex; /* Use flex for centering */
-    justify-content: center; /* Center main content */
-    padding-top: 20px; /* Add some top padding */
-    padding-bottom: 20px; /* Add some bottom padding */
+    padding: 20px; /* Add padding back */
+    display: flex;
+    justify-content: center;
 }
 
 .main-container {
     width: 100%;
-    max-width: 950px; /* Slightly wider max-width */
-    background-color: #f8f9fa; /* Very light grey background for the container */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 950px;
+    background-color: #ffffff; /* White background for main area */
+    padding: 25px 30px; /* More padding */
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Softer shadow */
 }
 
-/* --- Tabs/Navigation --- */
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #dee2e6; /* Light grey border */
-}
-
-.tab-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    font-size: 16px;
-    color: #495057; /* Dark grey text */
-    border-bottom: 3px solid transparent; /* Placeholder for active state */
-    transition: color 0.2s ease, border-color 0.2s ease;
-    margin-bottom: -2px; /* Align border with container's border */
-}
-
-.tab-button:hover {
-    color: #0056b3; /* Dark blue on hover */
-}
-
-.tab-button.active {
-    color: #007bff; /* Blue for active tab */
-    border-bottom-color: #007bff; /* Blue underline for active tab */
-    font-weight: bold;
-}
-
-/* --- Page Visibility --- */
-.page {
-    display: none; /* Hide pages by default */
-}
-
-.page.active {
-    display: block; /* Show the active page */
-}
-
-/* --- General Styles for Both Pages --- */
-.container {
-    max-width: 900px; /* Max width for content inside pages */
-    width: 100%;
-    margin: 0 auto; /* Center container within the page div */
-}
-
-h1 { /* Page Title */
-    color: #0056b3;
-    font-size: 24px;
-    margin-bottom: 30px;
+/* --- Page Title (Above ToC) --- */
+.main-container > h1 {
+    color: #343a40; /* Darker title */
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
 }
 
-/* --- Page 1: Lesson Styles --- */
-#page-1 h2 { /* Lesson Title */
+
+/* --- Table of Contents (New) --- */
+#table-of-contents {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+#table-of-contents h2 {
+    color: #495057; /* TOC Title color */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ced4da;
+    font-size: 20px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center list items */
+}
+
+.toc-list li {
+    margin-bottom: 10px;
+}
+
+.toc-link {
+    display: inline-block; /* Allows padding and centering */
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    background-color: #e9ecef; /* Light background for link */
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+    font-weight: 500;
+}
+
+.toc-link:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.toc-link.active { /* Style for the currently active TOC link */
+    background-color: #0056b3; /* Darker blue */
+    color: #ffffff;
+    font-weight: bold;
+    border-color: #004085;
+}
+
+
+/* --- Content Section Visibility (New) --- */
+.content-section {
+    display: none; /* Hide all content sections by default */
+    border-top: 1px solid #eee; /* Add separator */
+    padding-top: 20px; /* Space above content */
+}
+
+.content-section.content-active {
+    display: block; /* Show the active content section */
+}
+
+/* --- General Styles for Content Sections --- */
+.container { /* Container within each section */
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Lesson Styles (Adjusted Selectors) --- */
+.lesson h2 { /* Lesson Title */
     color: #d9534f;
     border-bottom: 2px solid #f0ad4e;
-    padding-bottom: 5px;
-    margin-top: 40px;
-    margin-bottom: 25px; /* Space below lesson title */
-    font-size: 22px; /* Slightly larger for lesson titles */
+    padding-bottom: 8px; /* Slightly more padding */
+    margin-top: 0; /* Reset top margin as section starts */
+    margin-bottom: 30px;
+    font-size: 24px;
     text-align: center;
 }
 
-#page-1 h3 { /* Section Title within Lesson (Nouns, Verbs, Sentences) */
-    color: #5a6268; /* Darker grey for section */
-    font-size: 18px;
-    margin-top: 25px;
-    margin-bottom: 15px;
+.lesson h3 { /* Section Title within Lesson */
+    color: #5a6268;
+    font-size: 19px; /* Slightly larger */
+    margin-top: 30px; /* More space above */
+    margin-bottom: 20px;
     text-align: left;
-    border-left: 4px solid #6c757d; /* Grey left border */
-    padding-left: 10px;
+    border-left: 5px solid #6c757d; /* Thicker border */
+    padding-left: 12px;
 }
 
-.lesson { /* Container for a whole lesson */
-    margin-bottom: 40px; /* Space between lessons */
-}
-
-.lesson-divider { /* Horizontal line between lessons */
+.lesson-divider {
     border: 0;
     height: 1px;
-    background-color: #dee2e6; /* Light grey */
-    margin: 40px 0; /* Space around the divider */
+    background-color: #dee2e6;
+    margin: 50px 0; /* More space */
 }
 
-
-/* --- Page 1: Card Styles (Existing - Applied within Lessons now) --- */
+/* --- Card Styles (Existing - No selector changes needed) --- */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center cards */
+    justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
-    padding-left: 10px; /* Minor padding */
-    padding-right: 10px;
+    padding: 0 10px; /* Consistent padding */
 }
 
 .card {
@@ -148,7 +172,7 @@ h1 { /* Page Title */
 }
 
 .full-details {
-    display: none; /* Initially hidden */
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -209,24 +233,29 @@ h1 { /* Page Title */
     display: none;
 }
 
-/* --- Page 1: Sentence Styles (Existing - Applied within Lessons now) --- */
+/* --- Sentence Styles (Existing - No selector changes needed) --- */
 .sentence-container {
     margin-top: 20px;
-    background-color: #fff;
+    background-color: #fdfdff; /* Slightly off-white */
     padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #eee; /* Add border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .sentence-item {
     margin-bottom: 12px;
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
+    padding: 10px 5px; /* Adjust padding */
+    border-bottom: 1px dashed #e0e0e0; /* Lighter dashed */
     cursor: pointer;
-    line-height: 1.6;
+    line-height: 1.7; /* More line height */
+    transition: background-color 0.15s ease;
 }
 .sentence-item:last-child {
     border-bottom: none;
+}
+.sentence-item:hover {
+    background-color: #f8f8f8;
 }
 
 .chinese-sentence {
@@ -239,33 +268,89 @@ h1 { /* Page Title */
     color: #0056b3;
     font-style: italic;
     margin-left: 10px;
+    display: none; /* Hide initially */
 }
 
-/* --- Page 2: Vocabulary List Styles (Existing) --- */
-#page-2 .container { /* Specificity for page 2 container */
+/* --- Character Explanation Styles (New in Lesson 3) --- */
+.char-explanation-container {
+    margin-top: 25px;
+    background-color: #fffaf0; /* Light floral white */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ffe4b5; /* Moccasin border */
+}
+
+.char-explanation-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee8dc; /* Cornsilk border */
+}
+.char-explanation-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.char-explained {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b4513; /* Saddle brown */
+    display: block;
+    margin-bottom: 10px;
+}
+.char-glyph { /* Specific style for just the character if needed */
+     font-size: 24px;
+     font-weight: bold;
+     color: #8b4513;
+}
+
+.char-explanation-item .explanation {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+/* Styles for specific parts within explanation */
+.radical, .phonetic, .example-char, .related-word {
+    font-weight: 500;
+    color: #d2691e; /* Chocolate color */
+    font-style: italic;
+}
+
+.char-image {
+    max-width: 100px; /* Limit image size */
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+
+/* --- Vocabulary List Page Styles (Existing, under #vocab-list-page ID) --- */
+#vocab-list-page .container {
     padding-left: 15px;
     padding-right: 15px;
 }
-#page-2 h1 { /* Different h1 style for vocab list */
-    color: #17a2b8; /* Teal color */
-    border-bottom: 2px solid #fd7e14; /* Orange border */
+#vocab-list-page h1 { /* Vocab List Title */
+    color: #17a2b8;
+    border-bottom: 2px solid #fd7e14;
+    margin-top: 0; /* Reset top margin */
 }
-
 
 .vocab-section {
     margin-bottom: 30px;
 }
 
-.vocab-section h2 { /* Vocab Type Title (Noun, Verb...) */
-    color: #28a745; /* Green color */
-    border-bottom: 2px solid #ffc107; /* Yellow border */
-    text-align: left; /* Align left */
+.vocab-section h2 {
+    color: #28a745;
+    border-bottom: 2px solid #ffc107;
+    text-align: left;
     font-size: 22px;
     margin-top: 30px;
 }
 
-.vocab-section h3 { /* Sub-section Title (About people...) */
-    color: #17a2b8; /* Teal color */
+.vocab-section h3 {
+    color: #17a2b8;
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 15px;
@@ -275,7 +360,7 @@ h1 { /* Page Title */
 }
 
 .vocab-list {
-    background-color: #ffffff; /* White background for list items */
+    background-color: #ffffff;
     border-radius: 5px;
     padding: 10px 15px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -283,7 +368,7 @@ h1 { /* Page Title */
 
 .vocab-item {
     padding: 10px 0;
-    border-bottom: 1px dotted #ced4da; /* Dotted separator */
+    border-bottom: 1px dotted #ced4da;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
@@ -293,32 +378,32 @@ h1 { /* Page Title */
 }
 
 .vocab-item:hover {
-    background-color: #e9ecef; /* Light grey hover */
+    background-color: #e9ecef;
 }
 
 .chinese-vocab {
     font-size: 18px;
     font-weight: 500;
-    color: #343a40; /* Dark grey */
+    color: #343a40;
 }
 
 .vocab-details {
-    display: none; /* Initially hidden */
+    display: none;
     margin-top: 8px;
-    padding-left: 20px; /* Indent details */
+    padding-left: 20px;
     font-size: 15px;
-    color: #6c757d; /* Medium grey */
+    color: #6c757d;
     line-height: 1.6;
 }
 
 .vocab-details .pinyin {
-    color: #dc3545; /* Red for pinyin */
+    color: #dc3545;
     font-style: italic;
     margin-right: 5px;
 }
 
 .vocab-details .russian-vocab {
-    color: #0056b3; /* Blue for Russian */
+    color: #0056b3;
 }
 
 .vocab-details .explanation {
@@ -326,24 +411,24 @@ h1 { /* Page Title */
     padding-top: 5px;
     border-top: 1px dashed #eee;
     font-size: 14px;
-    color: #555; /* Slightly darker grey for explanations */
-    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    color: #555;
+    white-space: pre-wrap;
 }
 .vocab-details ol, .vocab-details ul {
-    padding-left: 20px; /* Indent list items */
+    padding-left: 20px;
     margin-top: 5px;
 }
 
-.direction-image { /* Style for the direction image */
+.direction-image {
     max-width: 150px;
     height: auto;
-    display: block; /* Center it */
+    display: block;
     margin: 15px auto;
     border: 1px solid #ccc;
     padding: 5px;
 }
 
-#page-2 .explanation { /* General explanation style for page 2 */
+#vocab-list-page .explanation {
     background-color: #eef;
     border-left: 3px solid #007bff;
     padding: 10px;
