@@ -132,24 +132,24 @@ body {
 
 /* --- Dialogue Styles (Lesson 4) --- */
 .dialogue-container {
-    background-color: #f0faff; /* Light cyan background */
-    border: 1px solid #bce8f1; /* Light blue border */
+    background-color: #f0faff;
+    border: 1px solid #bce8f1;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
 }
 
 .dialogue-image {
-    max-width: 200px; /* 100px * 2 */
-    height: auto;
+    max-width: 600px; /* <<<< Increased size (100 * 6) >>>> */
+    height: auto;     /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto 20px auto; /* Center and add space below */
+    margin: 0 auto 25px auto; /* Center and add more space below */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .dialogue-lines p {
-    margin: 0 0 5px 0; /* Reduce default paragraph margin */
+    margin: 0 0 5px 0;
     line-height: 1.6;
 }
 
@@ -160,10 +160,10 @@ body {
 }
 
 .dialogue-pinyin {
-    display: block; /* Put pinyin on its own line */
+    display: block;
     font-size: 14px;
-    color: #888; /* Lighter grey for pinyin */
-    margin-bottom: 15px; /* Space after pinyin */
+    color: #888;
+    margin-bottom: 15px;
     font-style: italic;
 }
 
@@ -183,7 +183,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 220px;
-    min-height: 240px; /* Adjust height to feel balanced */
+    min-height: 240px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -196,15 +196,14 @@ body {
     padding: 15px;
 }
 
-/* Specific adjustment for cards without an image */
 .card.no-image .full-details {
-    justify-content: center; /* Center vertically if no image */
-    flex-grow: 1; /* Allow it to take space if needed */
-    padding-top: 20px; /* Add more padding top */
+    justify-content: center;
+    flex-grow: 1;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 .card.no-image {
-     min-height: 180px; /* Can be shorter */
+     min-height: 180px;
 }
 
 
@@ -237,8 +236,8 @@ body {
     display: flex;
 }
 
-.full-details .item-image {
-    max-width: 200px; /* 2x size */
+.full-details .item-image { /* Card images remain 2x */
+    max-width: 200px;
     height: auto;
     object-fit: contain;
     margin-bottom: 10px;
@@ -324,20 +323,20 @@ body {
 
 /* --- Character/Word Explanation Styles --- */
 .char-explanation-container,
-.word-explanation-container { /* Apply same style */
+.word-explanation-container {
     margin-top: 25px;
-    background-color: #fffaf0; /* Light floral white */
+    background-color: #fffaf0;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #ffe4b5; /* Moccasin border */
+    border: 1px solid #ffe4b5;
     margin-bottom: 30px;
 }
 
 .char-explanation-item,
-.word-explanation-item { /* Apply same style */
+.word-explanation-item {
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee8dc; /* Cornsilk border */
+    border-bottom: 1px solid #eee8dc;
 }
 .char-explanation-item:last-child,
 .word-explanation-item:last-child {
@@ -347,10 +346,10 @@ body {
 }
 
 .char-explained,
-.word-explained { /* Apply same style */
-    font-size: 20px; /* Slightly smaller than char */
+.word-explained {
+    font-size: 20px;
     font-weight: bold;
-    color: #8b4513; /* Saddle brown */
+    color: #8b4513;
     display: block;
     margin-bottom: 10px;
 }
@@ -362,7 +361,7 @@ body {
 
 .char-explanation-item .explanation,
 .word-explanation-item .explanation,
-.word-explanation-item .explanation-translation { /* Apply same style */
+.word-explanation-item .explanation-translation {
     font-size: 15px;
     color: #555;
     line-height: 1.7;
@@ -370,14 +369,14 @@ body {
 }
 .word-explanation-item .explanation-translation {
     font-style: italic;
-    color: #0056b3; /* Blue for translation */
+    color: #0056b3;
     margin-bottom: 5px;
 }
 
 
-.radical, .phonetic, .example-char, .related-word, .example-word { /* Apply same style */
+.radical, .phonetic, .example-char, .related-word, .example-word {
     font-weight: 500;
-    color: #d2691e; /* Chocolate color */
+    color: #d2691e;
     font-style: italic;
 }
 
