@@ -27,9 +27,9 @@ body {
 }
 
 
-/* --- Table of Contents (New) --- */
+/* --- Table of Contents --- */
 #table-of-contents {
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: #f8f9fa;
     padding: 15px 20px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -37,7 +37,7 @@ body {
 }
 
 #table-of-contents h2 {
-    color: #495057; /* TOC Title color */
+    color: #495057;
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
@@ -50,7 +50,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center; /* Center list items */
+    text-align: center;
 }
 
 .toc-list li {
@@ -58,12 +58,12 @@ body {
 }
 
 .toc-link {
-    display: inline-block; /* Allows padding and centering */
+    display: inline-block;
     padding: 8px 15px;
     cursor: pointer;
-    color: #007bff; /* Blue link color */
+    color: #007bff;
     text-decoration: none;
-    background-color: #e9ecef; /* Light background for link */
+    background-color: #e9ecef;
     border-radius: 5px;
     transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid transparent;
@@ -76,38 +76,38 @@ body {
     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
 }
 
-.toc-link.active { /* Style for the currently active TOC link */
-    background-color: #0056b3; /* Darker blue */
+.toc-link.active {
+    background-color: #0056b3;
     color: #ffffff;
     font-weight: bold;
     border-color: #004085;
 }
 
 
-/* --- Content Section Visibility (New) --- */
+/* --- Content Section Visibility --- */
 .content-section {
-    display: none; /* Hide all content sections by default */
-    border-top: 1px solid #eee; /* Add separator */
-    padding-top: 20px; /* Space above content */
+    display: none;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 }
 
 .content-section.content-active {
-    display: block; /* Show the active content section */
+    display: block;
 }
 
 /* --- General Styles for Content Sections --- */
-.container { /* Container within each section */
+.container {
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
 }
 
-/* --- Lesson Styles (Adjusted Selectors) --- */
+/* --- Lesson Styles --- */
 .lesson h2 { /* Lesson Title */
     color: #d9534f;
     border-bottom: 2px solid #f0ad4e;
-    padding-bottom: 8px; /* Slightly more padding */
-    margin-top: 0; /* Reset top margin as section starts */
+    padding-bottom: 8px;
+    margin-top: 0;
     margin-bottom: 30px;
     font-size: 24px;
     text-align: center;
@@ -115,11 +115,11 @@ body {
 
 .lesson h3 { /* Section Title within Lesson */
     color: #5a6268;
-    font-size: 19px; /* Slightly larger */
-    margin-top: 30px; /* More space above */
+    font-size: 19px;
+    margin-top: 30px;
     margin-bottom: 20px;
     text-align: left;
-    border-left: 5px solid #6c757d; /* Thicker border */
+    border-left: 5px solid #6c757d;
     padding-left: 12px;
 }
 
@@ -127,40 +127,90 @@ body {
     border: 0;
     height: 1px;
     background-color: #dee2e6;
-    margin: 50px 0; /* More space */
+    margin: 50px 0;
 }
+
+/* --- Dialogue Styles (Lesson 4) --- */
+.dialogue-container {
+    background-color: #f0faff; /* Light cyan background */
+    border: 1px solid #bce8f1; /* Light blue border */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.dialogue-image {
+    max-width: 200px; /* 100px * 2 */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* Center and add space below */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dialogue-lines p {
+    margin: 0 0 5px 0; /* Reduce default paragraph margin */
+    line-height: 1.6;
+}
+
+.dialogue-line {
+    font-size: 17px;
+    color: #333;
+    font-weight: 500;
+}
+
+.dialogue-pinyin {
+    display: block; /* Put pinyin on its own line */
+    font-size: 14px;
+    color: #888; /* Lighter grey for pinyin */
+    margin-bottom: 15px; /* Space after pinyin */
+    font-style: italic;
+}
+
 
 /* --- Card Styles (Adjusted for 2x image size) --- */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center cards */
-    gap: 25px; /* Adjusted gap */
-    margin-bottom: 35px; /* Adjusted margin */
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 35px;
     padding: 0 10px;
 }
 
 .card {
     background-color: #ffffff;
-    border-radius: 10px; /* Back to original rounding */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjusted shadow */
-    width: 220px;  /* <<<< Reduced width >>>> */
-    min-height: 240px; /* <<<< Adjusted min-height >>>> */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    min-height: 240px; /* Adjust height to feel balanced */
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Keep space-between or change to center if preferred */
+    justify-content: space-between;
     align-items: center;
     overflow: hidden;
     position: relative;
-    padding: 15px; /* Reduced padding */
+    padding: 15px;
 }
 
+/* Specific adjustment for cards without an image */
+.card.no-image .full-details {
+    justify-content: center; /* Center vertically if no image */
+    flex-grow: 1; /* Allow it to take space if needed */
+    padding-top: 20px; /* Add more padding top */
+    padding-bottom: 20px;
+}
+.card.no-image {
+     min-height: 180px; /* Can be shorter */
+}
+
+
 .card:hover {
-    transform: translateY(-5px); /* Back to original lift */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Adjusted hover shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .chinese-display {
@@ -176,7 +226,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 10px; /* Adjusted space */
+    padding-top: 10px;
 }
 
 .card.show-details .chinese-display {
@@ -188,21 +238,21 @@ body {
 }
 
 .full-details .item-image {
-    max-width: 200px; /* <<<< Adjusted size (100 * 2) >>>> */
-    height: auto;     /* Maintain aspect ratio */
+    max-width: 200px; /* 2x size */
+    height: auto;
     object-fit: contain;
-    margin-bottom: 10px; /* Adjusted margin */
+    margin-bottom: 10px;
 }
 
 .full-details .play-button {
     background-color: #5cb85c;
     color: white;
     border: none;
-    padding: 7px 12px; /* Adjusted button size */
-    font-size: 13px;   /* Adjusted font */
-    border-radius: 5px; /* Back to original rounding */
+    padding: 7px 12px;
+    font-size: 13px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px; /* Adjusted margin */
+    margin-bottom: 10px;
     transition: background-color 0.2s ease;
 }
 
@@ -211,22 +261,22 @@ body {
 }
 
 .full-details .russian-translation {
-    font-size: 15px; /* Adjusted font size */
+    font-size: 15px;
     color: #6c757d;
-    margin: 0 0 6px 0; /* Adjusted margin */
+    margin: 0 0 6px 0;
 }
 
 .full-details .pinyin {
-    font-size: 17px; /* Adjusted font size */
+    font-size: 17px;
     color: #495057;
-    margin: 0 0 6px 0; /* Adjusted margin */
+    margin: 0 0 6px 0;
 }
 
 .chinese-word {
-    font-size: 40px; /* Adjusted size */
+    font-size: 40px;
     font-weight: bold;
     color: #333;
-    margin: 5px 0; /* Adjusted vertical margin */
+    margin: 5px 0;
     line-height: 1.25;
 }
 
@@ -234,7 +284,7 @@ body {
     display: none;
 }
 
-/* --- Sentence Styles (Existing) --- */
+/* --- Sentence Styles --- */
 .sentence-container {
     margin-top: 20px;
     background-color: #fdfdff;
@@ -272,31 +322,35 @@ body {
     display: none;
 }
 
-/* --- Character Explanation Styles (Unchanged, .char-image remains large) --- */
-.char-explanation-container {
+/* --- Character/Word Explanation Styles --- */
+.char-explanation-container,
+.word-explanation-container { /* Apply same style */
     margin-top: 25px;
-    background-color: #fffaf0;
+    background-color: #fffaf0; /* Light floral white */
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #ffe4b5;
+    border: 1px solid #ffe4b5; /* Moccasin border */
     margin-bottom: 30px;
 }
 
-.char-explanation-item {
+.char-explanation-item,
+.word-explanation-item { /* Apply same style */
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee8dc;
+    border-bottom: 1px solid #eee8dc; /* Cornsilk border */
 }
-.char-explanation-item:last-child {
+.char-explanation-item:last-child,
+.word-explanation-item:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.char-explained {
-    font-size: 24px;
+.char-explained,
+.word-explained { /* Apply same style */
+    font-size: 20px; /* Slightly smaller than char */
     font-weight: bold;
-    color: #8b4513;
+    color: #8b4513; /* Saddle brown */
     display: block;
     margin-bottom: 10px;
 }
@@ -306,16 +360,24 @@ body {
      color: #8b4513;
 }
 
-.char-explanation-item .explanation {
+.char-explanation-item .explanation,
+.word-explanation-item .explanation,
+.word-explanation-item .explanation-translation { /* Apply same style */
     font-size: 15px;
     color: #555;
     line-height: 1.7;
     margin-bottom: 10px;
 }
+.word-explanation-item .explanation-translation {
+    font-style: italic;
+    color: #0056b3; /* Blue for translation */
+    margin-bottom: 5px;
+}
 
-.radical, .phonetic, .example-char, .related-word {
+
+.radical, .phonetic, .example-char, .related-word, .example-word { /* Apply same style */
     font-weight: 500;
-    color: #d2691e;
+    color: #d2691e; /* Chocolate color */
     font-style: italic;
 }
 
@@ -330,7 +392,7 @@ body {
 }
 
 
-/* --- Vocabulary List Page Styles (Existing) --- */
+/* --- Vocabulary List Page Styles --- */
 #vocab-list-page .container {
     padding-left: 15px;
     padding-right: 15px;
