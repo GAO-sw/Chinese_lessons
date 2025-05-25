@@ -123,9 +123,8 @@ body {
     padding-left: 12px;
 }
 
-/* New Sub-section title for sentence practice types */
 .lesson .sentence-practice-section h4 {
-    color: #6f42c1; /* Purple for these sub-titles */
+    color: #6f42c1;
     font-size: 17px;
     margin-top: 25px;
     margin-bottom: 10px;
@@ -297,8 +296,8 @@ body {
 
 /* --- Sentence Styles --- */
 .sentence-container,
-.sentence-container-ru-cn { /* Apply to both types of sentence containers */
-    margin-top: 15px; /* Reduced top margin for sub-sections */
+.sentence-container-ru-cn {
+    margin-top: 15px;
     background-color: #fdfdff;
     padding: 15px 20px;
     border-radius: 8px;
@@ -307,7 +306,7 @@ body {
 }
 
 .sentence-item,
-.sentence-item-ru-cn { /* Apply to both types of sentence items */
+.sentence-item-ru-cn {
     margin-bottom: 12px;
     padding: 10px 5px;
     border-bottom: 1px dashed #e0e0e0;
@@ -338,7 +337,7 @@ body {
 }
 
 .russian-sentence-source { /* For Ru -> Cn, initially visible Russian */
-    font-size: 17px; /* Slightly larger for source language */
+    font-size: 17px;
     color: #0056b3;
     font-style: italic;
 }
@@ -352,7 +351,7 @@ body {
 
 /* --- Character/Word Explanation Styles --- */
 .char-explanation-container,
-.word-explanation-container {
+.word-explanation-container { /* This class is used for both types now */
     margin-top: 25px;
     background-color: #fffaf0;
     padding: 20px;
@@ -361,8 +360,8 @@ body {
     margin-bottom: 30px;
 }
 
-.char-explanation-item,
-.word-explanation-item {
+.char-explanation-item, /* For Lesson 3 */
+.word-explanation-item { /* For Lesson 4 and 6 */
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #eee8dc;
@@ -374,8 +373,8 @@ body {
     border-bottom: none;
 }
 
-.char-explained,
-.word-explained {
+.char-explained, /* For Lesson 3 */
+.word-explained { /* For Lesson 4 and 6 */
     font-size: 20px;
     font-weight: bold;
     color: #8b4513;
@@ -388,9 +387,9 @@ body {
      color: #8b4513;
 }
 
-.char-explanation-item .explanation,
-.word-explanation-item .explanation,
-.word-explanation-item .explanation-translation {
+.char-explanation-item .explanation, /* For Lesson 3 */
+.word-explanation-item .explanation, /* For Lesson 4 and 6 */
+.word-explanation-item .explanation-translation { /* For Lesson 4 and 6 */
     font-size: 15px;
     color: #555;
     line-height: 1.7;
@@ -418,5 +417,3 @@ body {
     padding: 5px;
     background-color: #fff;
 }
-
-/* Styles for vocabulary list page are removed as per instruction */
