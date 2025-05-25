@@ -123,6 +123,18 @@ body {
     padding-left: 12px;
 }
 
+/* New Sub-section title for sentence practice types */
+.lesson .sentence-practice-section h4 {
+    color: #6f42c1; /* Purple for these sub-titles */
+    font-size: 17px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-bottom: 1px dashed #6f42c1;
+    padding-bottom: 5px;
+}
+
+
 .lesson-divider {
     border: 0;
     height: 1px;
@@ -140,10 +152,10 @@ body {
 }
 
 .dialogue-image {
-    max-width: 600px; /* <<<< Increased size (100 * 6) >>>> */
-    height: auto;     /* Maintain aspect ratio */
+    max-width: 600px;
+    height: auto;
     display: block;
-    margin: 0 auto 25px auto; /* Center and add more space below */
+    margin: 0 auto 25px auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -168,7 +180,7 @@ body {
 }
 
 
-/* --- Card Styles (Adjusted for 2x image size) --- */
+/* --- Card Styles --- */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -236,7 +248,7 @@ body {
     display: flex;
 }
 
-.full-details .item-image { /* Card images remain 2x */
+.full-details .item-image {
     max-width: 200px;
     height: auto;
     object-fit: contain;
@@ -284,8 +296,9 @@ body {
 }
 
 /* --- Sentence Styles --- */
-.sentence-container {
-    margin-top: 20px;
+.sentence-container,
+.sentence-container-ru-cn { /* Apply to both types of sentence containers */
+    margin-top: 15px; /* Reduced top margin for sub-sections */
     background-color: #fdfdff;
     padding: 15px 20px;
     border-radius: 8px;
@@ -293,7 +306,8 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
-.sentence-item {
+.sentence-item,
+.sentence-item-ru-cn { /* Apply to both types of sentence items */
     margin-bottom: 12px;
     padding: 10px 5px;
     border-bottom: 1px dashed #e0e0e0;
@@ -301,10 +315,12 @@ body {
     line-height: 1.7;
     transition: background-color 0.15s ease;
 }
-.sentence-item:last-child {
+.sentence-item:last-child,
+.sentence-item-ru-cn:last-child {
     border-bottom: none;
 }
-.sentence-item:hover {
+.sentence-item:hover,
+.sentence-item-ru-cn:hover {
     background-color: #f8f8f8;
 }
 
@@ -313,13 +329,26 @@ body {
     color: #333;
 }
 
-.russian-sentence {
+.russian-sentence { /* For Cn -> Ru */
     font-size: 16px;
     color: #0056b3;
     font-style: italic;
     margin-left: 10px;
     display: none;
 }
+
+.russian-sentence-source { /* For Ru -> Cn, initially visible Russian */
+    font-size: 17px; /* Slightly larger for source language */
+    color: #0056b3;
+    font-style: italic;
+}
+.chinese-translation-target { /* For Ru -> Cn, hidden Chinese */
+    font-size: 17px;
+    color: #333;
+    margin-left: 10px;
+    display: none;
+}
+
 
 /* --- Character/Word Explanation Styles --- */
 .char-explanation-container,
@@ -380,7 +409,7 @@ body {
     font-style: italic;
 }
 
-.char-image { /* Mi image remains large */
+.char-image {
     max-width: 720px;
     height: auto;
     display: block;
@@ -390,115 +419,4 @@ body {
     background-color: #fff;
 }
 
-
-/* --- Vocabulary List Page Styles --- */
-#vocab-list-page .container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-#vocab-list-page h1 {
-    color: #17a2b8;
-    border-bottom: 2px solid #fd7e14;
-    margin-top: 0;
-}
-
-.vocab-section {
-    margin-bottom: 30px;
-}
-
-.vocab-section h2 {
-    color: #28a745;
-    border-bottom: 2px solid #ffc107;
-    text-align: left;
-    font-size: 22px;
-    margin-top: 30px;
-}
-
-.vocab-section h3 {
-    color: #17a2b8;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    text-align: left;
-    border-left: 4px solid #17a2b8;
-    padding-left: 10px;
-}
-
-.vocab-list {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 10px 15px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.vocab-item {
-    padding: 10px 0;
-    border-bottom: 1px dotted #ced4da;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.vocab-item:last-child {
-    border-bottom: none;
-}
-
-.vocab-item:hover {
-    background-color: #e9ecef;
-}
-
-.chinese-vocab {
-    font-size: 18px;
-    font-weight: 500;
-    color: #343a40;
-}
-
-.vocab-details {
-    display: none;
-    margin-top: 8px;
-    padding-left: 20px;
-    font-size: 15px;
-    color: #6c757d;
-    line-height: 1.6;
-}
-
-.vocab-details .pinyin {
-    color: #dc3545;
-    font-style: italic;
-    margin-right: 5px;
-}
-
-.vocab-details .russian-vocab {
-    color: #0056b3;
-}
-
-.vocab-details .explanation {
-    margin-top: 5px;
-    padding-top: 5px;
-    border-top: 1px dashed #eee;
-    font-size: 14px;
-    color: #555;
-    white-space: pre-wrap;
-}
-.vocab-details ol, .vocab-details ul {
-    padding-left: 20px;
-    margin-top: 5px;
-}
-
-.direction-image {
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border: 1px solid #ccc;
-    padding: 5px;
-}
-
-#vocab-list-page .explanation {
-    background-color: #eef;
-    border-left: 3px solid #007bff;
-    padding: 10px;
-    margin: 15px 0;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.5;
-}
+/* Styles for vocabulary list page are removed as per instruction */
